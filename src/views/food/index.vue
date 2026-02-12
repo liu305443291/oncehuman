@@ -1,15 +1,22 @@
 <template>
-  <div :class="$style.food">123</div>
+  <div :class="$style.container">
+    <Search></Search>
+  </div>
 </template>
 
-<script>
+<script lang="ts">
+import Search from "./filter.vue";
+
 export default {
   name: "foodItem",
+  components: {
+    Search,
+  },
 };
 </script>
 
 <style lang="scss" module>
-.food {
-  background-color: #ccc;
+.container {
+  height: 1800px;
 }
 </style>

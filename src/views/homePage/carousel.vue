@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" module>
 .container {
-  height: 100vh;
+  height: calc(100vh - $head-hight);
 }
 </style>
 

@@ -68,6 +68,7 @@ export default {
   methods: {
     click() {
       this.$router.push("/homePage");
+      this.activeIndex = "homePage";
     },
     handleSelect(key) {
       this.$router.push(`/${key}`);
@@ -82,6 +83,7 @@ export default {
 
 <style lang="scss" module>
 .head {
+  overflow: hidden;
   height: $head-hight;
   background-color: #fff;
 

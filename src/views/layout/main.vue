@@ -18,6 +18,6 @@ export default {
 <style lang="scss" module>
 .container {
   overflow: auto;
-  min-height: calc(100vh - $head-hight);
+  height: calc(100vh - $head-hight);
 }
 </style>
