@@ -1,0 +1,155 @@
+.flex-box {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-auto {
+  flex: 1;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.mar-l4 {
+  margin-left: 4px;
+}
+
+.mar-r4 {
+  margin-right: 4px;
+}
+
+.mar-t4 {
+  margin-top: 4px;
+}
+
+.mar-b4 {
+  margin-bottom: 4px;
+}
+
+.mar-l8 {
+  margin-left: 8px;
+}
+
+.mar-r8 {
+  margin-right: 8px;
+}
+
+.mar-t8 {
+  margin-top: 8px;
+}
+
+.mar-b8 {
+  margin-bottom: 8px;
+}
+
+.mar-l16 {
+  margin-left: 16px;
+}
+
+.mar-r16 {
+  margin-right: 16px;
+}
+
+.mar-t16 {
+  margin-top: 16px;
+}
+
+.mar-b16 {
+  margin-bottom: 16px;
+}
+
+.pad-l4 {
+  padding-left: 4px;
+}
+
+.pad-r4 {
+  padding-right: 4px;
+}
+
+.pad-t4 {
+  padding-top: 4px;
+}
+
+.pad-b4 {
+  padding-bottom: 4px;
+}
+
+.pad-l8 {
+  padding-left: 8px;
+}
+
+.pad-r8 {
+  padding-right: 8px;
+}
+
+.pad-t8 {
+  padding-top: 8px;
+}
+
+.pad-b8 {
+  padding-bottom: 8px;
+}
+
+.pad-l16 {
+  padding-left: 16px;
+}
+
+.pad-r16 {
+  padding-right: 16px;
+}
+
+.pad-t16 {
+  padding-top: 16px;
+}
+
+.pad-b16 {
+  padding-bottom: 16px;
+}
