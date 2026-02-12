@@ -3,6 +3,19 @@ import { RouteConfig } from 'vue-router'
 import Layout from '@/views/layout/index.vue'
 
 const dynamicRoute: Array<RouteConfig> = [
+    // 首页
+    {
+        path: '/homePage',
+        component: Layout,
+        children: [
+            {
+                path: '',
+                name: 'homePage',
+                component: () => import('@/views/homePage/index.vue'),
+            }
+        ]
+    },
+    // 食物
     {
         path: '/food',
         component: Layout,

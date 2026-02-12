@@ -1,34 +1,33 @@
 <template>
-  <div class="head flex-box space-between align-center">
-    <el-image class="logo" :src="logoSrc" fit="cover">
+  <div :class="$style.head" class="flex-box space-between align-center">
+    <!-- logo -->
+    <ElImage :class="$style.logo" :src="logoSrc" fit="cover" @click="click">
       <div slot="error" class="image-slot">
-        <i class="el-icon-picture-outline"></i>
+        <i class="el-icon-picture-outline" />
       </div>
-    </el-image>
-    <el-menu
+    </ElImage>
+
+    <!-- 导航栏 -->
+    <ElMenu
       :default-active="activeIndex"
-      class="el-menu-demo menu"
+      class="el-menu-demo"
       mode="horizontal"
       @select="handleSelect"
     >
-      <div class="item" v-for="(item, index) in menuList" :key="index">
+      <div :class="$style.item" v-for="(item, index) in menuList" :key="index">
         <!-- 单个 -->
-        <el-menu-item :index="index.toString()" v-if="!item.child">
+        <ElMenuItem :index="item.id" v-if="!item.child">
           {{ item.title }}
-        </el-menu-item>
+        </ElMenuItem>
         <!-- 多个 -->
-        <el-submenu :index="index.toString()" v-else>
+        <ElSubmenu :index="item.id" v-else>
           <template slot="title">{{ item.title }}</template>
-          <el-menu-item
-            v-for="(v, i) in item.child"
-            :key="i"
-            :index="`${index}-${i}`"
-          >
+          <ElMenuItem v-for="(v, i) in item.child" :key="i" :index="v.id">
             {{ v.title }}
-          </el-menu-item>
-        </el-submenu>
+          </ElMenuItem>
+        </ElSubmenu>
       </div>
-    </el-menu>
+    </ElMenu>
   </div>
 </template>
 
@@ -37,11 +36,11 @@ export default {
   name: "headView",
   data() {
     return {
-      activeIndex: "0",
+      activeIndex: "homePage",
       menuList: [
         {
           title: "首页",
-          id: "home",
+          id: "homePage",
         },
         {
           title: "菜单",
@@ -67,35 +66,49 @@ export default {
     logoSrc: () => "https://webinput.nie.netease.com/img/qrsj/logo.png",
   },
   methods: {
-    handleSelect(v) {
-      console.log(v);
+    click() {
+      this.$router.push("/homePage");
     },
+    handleSelect(key) {
+      this.$router.push(`/${key}`);
+    },
+  },
+  updated() {
+    // 首次加载
+    this.$router.push("/homePage");
   },
 };
 </script>
 
-<style scoped lang="scss">
-$head-hight: 90px;
-
+<style lang="scss" module>
 .head {
   height: $head-hight;
-  background-color: #ccc;
+  background-color: #fff;
 
-  .logo {
-    margin-left: 10px;
+  .logo :hover {
+    cursor: pointer;
   }
 
-  .menu {
-    .item {
-      display: inline-block;
-    }
-    .el-menu-item,
-    .el-submenu__title,
-    ::v-deep .el-submenu__title {
-      height: $head-hight;
-      line-height: $head-hight;
-      padding: 0 80px;
-    }
+  .item {
+    display: inline-block;
+  }
+}
+</style>
+
+<style lang="scss" scoped>
+::v-deep {
+  .el-image {
+    margin-left: 10px;
+    max-height: $head-hight;
+    overflow: hidden;
+  }
+
+  .el-menu-item,
+  .el-submenu__title,
+  .el-submenu__title {
+    height: $head-hight;
+    line-height: $head-hight;
+    padding: 0 80px;
   }
 }
 </style>

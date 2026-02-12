@@ -1,5 +1,5 @@
 <template>
-  <div class="food">123</div>
+  <div :class="$style.food">123</div>
 </template>
 
 <script>
@@ -8,7 +8,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" module>
 .food {
   background-color: #ccc;
 }

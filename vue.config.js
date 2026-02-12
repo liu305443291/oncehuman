@@ -1,6 +1,4 @@
-const { defineConfig } = require('@vue/cli-service')
-
-module.exports = defineConfig({
+module.exports = {
   transpileDependencies: true,
   devServer: {
     port: 9527,
@@ -10,4 +8,11 @@ module.exports = defineConfig({
       overlay: false
     }
   },
-})
+  css: {
+    loaderOptions: {
+      scss: {
+        additionalData: `@import "@/scss/main.scss";`
+      }
+    }
+  },
+}

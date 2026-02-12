@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss" module>
 .container {
-  padding: 24px;
   overflow: auto;
+  min-height: calc(100vh - $head-hight);
 }
 </style>
