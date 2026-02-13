@@ -12,9 +12,9 @@
   />
 </template>
 
-<script lang="ts">
-// @ts-nocheck
+<script>
 export default {
+  name: "IPagination",
   props: {
     paginationQuery: {
       type: Object,

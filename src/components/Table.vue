@@ -61,11 +61,11 @@
   </div>
 </template>
 
-<script lang="ts">
-// @ts-nocheck
+<script>
 import Pagination from "@/components/pagination";
 
 export default {
+  name: "ITable",
   components: {
     Pagination,
   },

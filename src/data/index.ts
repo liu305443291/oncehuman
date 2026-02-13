@@ -1,5 +1,7 @@
-import MENU from './JSON/menu.json'
-import DATA_MENU1 from './JSON/menu.json'
+import DATA_MENU from './JSON/menu.json' // 菜单
+import DATA_DIET from './JSON/diet.json' // 食物
 
-export const DATA_MENU: any = MENU
-export const DATA_MENU11: any = DATA_MENU1
+export {
+    DATA_MENU,
+    DATA_DIET
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "暖暖凉凉汤",
+    "id": "1",
+    "imgSrc": "",
+    "type": 1,
+    "quality": 1,
+    "getWay": 1,
+    "liveAttribute": ["饱食度+50", "理智值+100"],
+    "extraEffect": ["123"],
+    "description": "daafefgsgagef",
+    "constitute": [
+      {
+        "id": "",
+        "num": 1
+      },
+      {
+        "id": "",
+        "num": 2
+      }
+    ]
+  },
+  {
+    "name": "凉白开",
+    "id": "2",
+    "imgSrc": "",
+    "type": 1,
+    "quality": 1,
+    "getWay": 1,
+    "liveAttribute": ["饱食度+50", "理智值+100"],
+    "extraEffect": ["123"],
+    "description": "daafefgsgagef",
+    "constitute": [
+      {
+        "id": "",
+        "num": 1
+      },
+      {
+        "id": "",
+        "num": 2
+      }
+    ]
+  }
+]

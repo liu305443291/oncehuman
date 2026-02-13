@@ -1,16 +1,41 @@
 <template>
   <div :class="$style.container">
-    <Search></Search>
+    <!-- 筛选 -->
+    <IFilter @search="search" :filterList="filterList" />
+
+    <!-- 列表 -->
+    <ITable :get="page" :head="head" :query="query"></ITable>
   </div>
 </template>
 
-<script lang="ts">
-import Search from "./filter.vue";
+<script>
+import IFilter from "@/components/Filter.vue";
+import ITable from "@/components/Table.vue";
+
+import { filterList, head } from "./table_data";
+import { page } from "@/api/diet/index";
 
 export default {
   name: "foodItem",
   components: {
-    Search,
+    IFilter,
+    ITable,
+  },
+  data() {
+    return {
+      query: {},
+    };
+  },
+  computed: {
+    page: () => page,
+    head: () => head,
+    filterList: () => filterList,
+  },
+  methods: {
+    // 搜索
+    search(form) {
+      this.query = form;
+    },
   },
 };
 </script>

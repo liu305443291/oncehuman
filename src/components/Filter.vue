@@ -128,7 +128,18 @@ export default {
 
     // 搜索
     search() {
-      this.$emit("search", JSON.parse(JSON.stringify(this.form)));
+      // 拷贝form表单
+      let res = JSON.parse(JSON.stringify(this.form));
+
+      // 删除空值
+      Object.keys(res).forEach((key) => {
+        if (res[key] === null || res[key] === undefined || res[key] === "") {
+          delete res[key];
+        }
+      });
+
+      // 导出结果
+      this.$emit("search", res);
     },
   },
 };
