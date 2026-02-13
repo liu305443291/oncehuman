@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <IDrawer @close="close()" :drawer="drawer" title="添加">123</IDrawer>
-  </div>
+  <IDrawer @close="close" :drawer="drawer" title="添加">123</IDrawer>
 </template>
 
 <script>
@@ -26,7 +24,7 @@ export default {
   methods: {
     close() {
       this.$emit("close");
-      this.form = {};
+      this.form = JSON.parse(JSON.stringify(this.$options.data().form));
     },
   },
 };

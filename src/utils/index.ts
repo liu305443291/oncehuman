@@ -1,8 +1,6 @@
 import * as ENUM from '@/enum/index'
 
-// 2. 定义枚举名称的类型（约束入参只能是 ENUM 的 key，避免传错）
 type EnumKey = keyof typeof ENUM;
-// 定义返回值的类型（明确 label/value 类型）
 type OptionItem = {
     label: string;
     value: string;

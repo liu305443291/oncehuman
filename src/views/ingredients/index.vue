@@ -7,14 +7,14 @@
     <div :class="$style.table">
       <ITable :get="page" :head="head" :query="query">
         <ElTableColumn label="操作" width="160">
-          <div @click="add">添加</div>
+          <span @click="add">添加</span>
           <span> 修改 </span>
           <span> 删除 </span>
         </ElTableColumn>
       </ITable>
     </div>
 
-    <IDrawer @close="drawer = !drawer" :drawer="drawer" />
+    <IDrawer @close="close" :drawer="drawer" />
   </div>
 </template>
 

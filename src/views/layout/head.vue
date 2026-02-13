@@ -55,6 +55,7 @@ export default {
     // 跳转页面
     handleSelect(key) {
       this.$router.push(`/${key}`);
+      this.activeIndex = key;
     },
 
     // 获取菜单数据
