@@ -1,0 +1,104 @@
+// 标签公共样式
+%tag {
+  font-size: 14px;
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 4px;
+  user-select: none;
+  color: #fff;
+  //   height: 100px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+// 品质---品质
+// 普通
+.plain-quality-tag {
+  @extend %tag;
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+// 常规
+.routine-quality-tag {
+  @extend %tag;
+  background-color: #98fb98;
+}
+
+// 精良
+.exquisite-quality-tag {
+  @extend %tag;
+  background-color: #00008b;
+}
+
+// 卓越
+.excellence-quality-tag {
+  @extend %tag;
+  background-color: #4b0082;
+}
+
+// 完美
+.perfect-quality-tag {
+  @extend %tag;
+  background-color: #ffd700;
+}
+
+// 食材分类---食材分类
+// 蛋
+.egg-ingredients-tag {
+  @extend %tag;
+  background-color: #f8e7c8;
+}
+
+// 鱼
+.fish-ingredients-tag {
+  @extend %tag;
+  background-color: #c6e2e9;
+}
+
+// 肉
+.meat-ingredients-tag {
+  @extend %tag;
+  background-color: #f2d2cd;
+}
+
+// 奶
+.milk-ingredients-tag {
+  @extend %tag;
+  background-color: #f5f7fa;
+}
+
+// 水
+.water-ingredients-tag {
+  @extend %tag;
+  background-color: #d1e5f6;
+}
+
+// 水果
+.fruit-ingredients-tag {
+  @extend %tag;
+  background-color: #d8e8d9;
+}
+
+// 嫁接作物
+.graftedCrop-ingredients-tag {
+  @extend %tag;
+  background-color: #e6d6ec;
+}
+
+// 变异作物
+.mutatedCrop-ingredients-tag {
+  @extend %tag;
+  background-color: #ffe5d4;
+}
+
+// 加工品
+.processedProduct-ingredients-tag {
+  @extend %tag;
+  background-color: #eae2e9;
+}
+
+// 普通作物
+.normalCrop-ingredients-tag {
+  @extend %tag;
+  background-color: #e3f0e3;
+}

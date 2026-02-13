@@ -19,5 +19,6 @@ export default {
 .container {
   overflow: auto;
   height: calc(100vh - $head-hight);
+  padding: 12px;
 }
 </style>

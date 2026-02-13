@@ -14,8 +14,12 @@ export function page(query: any) {
             return fuzzySearch(v.name, query.name)
         })
 
-        if (query?.grade) list = list.filter((v: any) => {
-            return v.grade === query.grade
+        if (query?.type) list = list.filter((v: any) => {
+            return v.type === query.type
+        })
+
+        if (query?.quality) list = list.filter((v: any) => {
+            return v.quality === query.quality
         })
 
         // 返回分页数据
@@ -24,3 +28,5 @@ export function page(query: any) {
         resolve(list)
     })
 }
+
+

@@ -4,13 +4,15 @@
     <IFilter @search="search" :filterList="filterList" />
 
     <!-- 列表 -->
-    <ITable :get="page" :head="head" :query="query">
-      <ElTableColumn label="操作" width="160">
-        <div @click="add">添加</div>
-        <span> 修改 </span>
-        <span> 删除 </span>
-      </ElTableColumn>
-    </ITable>
+    <div :class="$style.table">
+      <ITable :get="page" :head="head" :query="query">
+        <ElTableColumn label="操作" width="160">
+          <div @click="add">添加</div>
+          <span> 修改 </span>
+          <span> 删除 </span>
+        </ElTableColumn>
+      </ITable>
+    </div>
 
     <IDrawer @close="drawer = !drawer" :drawer="drawer" />
   </div>
@@ -44,12 +46,20 @@ export default {
         {
           label: "类型",
           formatter: (row) =>
-            this.$createElement("span", {}, INGREDIENT_TYPE_ENUM[row.type]),
+            this.$createElement(
+              "div",
+              { class: `${row.type}-ingredients-tag` },
+              INGREDIENT_TYPE_ENUM[row.type],
+            ),
         },
         {
           label: "品质",
           formatter: (row) =>
-            this.$createElement("span", {}, QUALITY_ENUM[row.quality]),
+            this.$createElement(
+              "div",
+              { class: `${row.quality}-quality-tag` },
+              QUALITY_ENUM[row.quality],
+            ),
         },
       ],
     };
@@ -79,6 +89,9 @@ export default {
 
 <style lang="scss" module>
 .container {
-  height: 1800px;
+  .table {
+    padding: 12px;
+    border: 1px solid #000;
+  }
 }
 </style>
