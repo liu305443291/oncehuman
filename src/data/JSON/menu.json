@@ -1,0 +1,29 @@
+[
+  {
+    "title": "首页",
+    "id": "homePage",
+    "index": 1
+  },
+  {
+    "title": "攻略",
+    "id": "strategy",
+    "index": 2,
+    "child": [
+      {
+        "title": "食物",
+        "id": "food",
+        "index": 1
+      },
+      {
+        "title": "配装",
+        "id": "equipment",
+        "index": 2
+      }
+    ]
+  },
+  {
+    "title": "资讯",
+    "id": "info",
+    "index": 3
+  }
+]

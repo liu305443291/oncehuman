@@ -91,9 +91,5 @@ export default {
   // height: 200px;
   // background-color: #ccc;
   // border: 1px solid #000;
-
-  .search {
-    // width: 800px;
-  }
 }
 </style>

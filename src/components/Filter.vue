@@ -7,15 +7,14 @@
         <!-- 搜索框 -->
         <ElCol
           :span="24"
-          v-if="searchStr"
-          class="inputs flex-box justify-center align-center"
+          v-if="!!searchObj"
+          class="inputBox flex-box justify-center align-center"
         >
-          <ElFormItem :prop="searchStr?.prop">
+          <ElFormItem :prop="searchObj?.prop">
             <ElInput
-              v-model="form[`${searchStr.prop}`]"
-              :placeholder="`请输入${searchStr.label}查询`"
+              v-model="form[`${searchObj.prop}`]"
+              :placeholder="`请输入${searchObj.label}`"
               clearable
-              :class="!form[`${searchStr.prop}`] || 'active'"
             >
               <el-button slot="append" @click="search" icon="el-icon-search" />
             </ElInput>
@@ -25,7 +24,7 @@
 
       <ElRow :class="$style.elseBox">
         <!-- 清空按钮 -->
-        <ElCol :span="6" class="flex-box justify-center align-center btn">
+        <ElCol :span="6" class="flex-box justify-center align-center clearBtn">
           <ElFormItem>
             <ElButton @click="reset"> 全部 </ElButton>
           </ElFormItem>
@@ -38,18 +37,14 @@
           class="flex-box justify-center align-center"
           :span="item.span ?? 6"
         >
-          <ElFormItem
-            v-if="item.type === 'select'"
-            :label="item.label ? '' : ''"
-            :prop="item.prop"
-          >
-            <!-- 下拉框 -->
+          <!-- 下拉框 -->
+          <ElFormItem v-if="item.type === 'select'" :prop="item.prop">
             <ElSelect
               v-model="form[`${item.prop}`]"
-              :placeholder="`请选择${item.label}查询`"
-              clearable
               @change="search"
+              :placeholder="`请选择${item.label}`"
               :class="!form[`${item.prop}`] || 'active'"
+              clearable
             >
               <ElOption
                 v-for="v in item.options"
@@ -61,18 +56,15 @@
             </ElSelect>
           </ElFormItem>
 
-          <ElFormItem
-            v-if="item.type === 'selects'"
-            :label="item.label ? '' : ''"
-            :prop="item.prop"
-          >
-            <!-- 多选下拉框 -->
+          <!-- 多选下拉框 -->
+          <ElFormItem v-if="item.type === 'selects'" :prop="item.prop">
             <ElSelect
               v-model="form[`${item.prop}`]"
-              :placeholder="`请选择${item.label}查询`"
+              @change="search"
+              :placeholder="`请选择${item.label}`"
+              :class="!form[`${item.prop}`] || 'active'"
               clearable
               multiple
-              @change="search"
             >
               <ElOption
                 v-for="v in item.options"
@@ -86,16 +78,6 @@
         </ElCol>
       </ElRow>
     </ElForm>
-
-    <!-- 操作按钮 -->
-    <div
-      v-if="false"
-      class="flex-box justify-end align-end"
-      :class="$style.btnBox"
-    >
-      <ElButton @click="reset"> 重置 </ElButton>
-      <ElButton type="primary" @click="search"> 搜索 </ElButton>
-    </div>
   </div>
 </template>
 
@@ -114,7 +96,7 @@ export default {
     };
   },
   computed: {
-    searchStr() {
+    searchObj() {
       return this.filterList.find((v) => v.type === "input");
     },
   },
@@ -154,10 +136,6 @@ export default {
 
 <style lang="scss" module>
 .container {
-  .btnBox {
-    margin: 0 0 22px 100px;
-  }
-
   .elseBox {
     padding: 20px 18% 0;
   }
