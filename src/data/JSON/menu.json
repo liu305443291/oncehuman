@@ -15,6 +15,11 @@
         "index": 1
       },
       {
+        "title": "食材",
+        "id": "ingredients",
+        "index": 2
+      },
+      {
         "title": "配装",
         "id": "equipment",
         "index": 2

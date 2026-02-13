@@ -13,7 +13,7 @@
     :show-close="showClose"
     :size="size"
     :title="title"
-    :visible.sync="drawer"
+    :visible.sync="drawer_"
     :wrapper-closable="wrapperClosable"
     :with-header="withHeader"
   >
@@ -29,9 +29,9 @@
   </ElDrawer>
 </template>
 
-<script lang="ts">
-// @ts-nocheck
+<script>
 export default {
+  name: "IDrawer",
   props: {
     drawer: {
       type: Boolean,
@@ -110,7 +110,11 @@ export default {
       default: true,
     },
   },
-  computed: {},
+  computed: {
+    drawer_: function () {
+      return this.drawer;
+    },
+  },
   methods: {
     // 关闭前的回调，会暂停 Drawer 的关闭
     close() {

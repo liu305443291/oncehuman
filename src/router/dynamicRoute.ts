@@ -26,6 +26,18 @@ const dynamicRoute: Array<RouteConfig> = [
                 component: () => import('@/views/food/index.vue'),
             }
         ]
+    },
+    // 食材
+    {
+        path: '/ingredients',
+        component: Layout,
+        children: [
+            {
+                path: '',
+                name: 'ingredients',
+                component: () => import('@/views/ingredients/index.vue'),
+            }
+        ]
     }
 ]
 

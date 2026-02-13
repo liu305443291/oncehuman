@@ -1,11 +1,14 @@
 import { DATA_DIET } from '@/data/index'
 import { getDataByPage, fuzzySearch } from '@/utils/api'
+import { getItem } from '@/utils/localStorage'
+
+const name = "DATA_DIET"
 
 export function page(query: any) {
     return new Promise((resolve) => {
 
         // 获取全部数据
-        let list: any = DATA_DIET || []
+        let list: any = getItem('DATA_DIET') || DATA_DIET || []
 
         if (query?.name) list = list.filter((v: any) => {
             return fuzzySearch(v.name, query.name)
