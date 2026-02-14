@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@cloudbase/node-sdk": "^3.18.0",
+    "apollo-server-errors": "^3.3.1",
     "core-js": "^3.8.3",
     "element-ui": "^2.15.14",
     "vue": "^2.6.14",

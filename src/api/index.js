@@ -4,5 +4,5 @@ import tcb from "@cloudbase/node-sdk";
 // const tcb = require('@cloudbase/node-sdk')
 
 const app = tcb.init({
-    env: "http://192.168.10.37:9527/", // 替换为您的环境 ID
+    env: "oncehuman-4gcx45zs07534b7a", // 替换为您的环境 ID
 });
