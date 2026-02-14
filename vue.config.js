@@ -14,10 +14,5 @@ module.exports = {
         additionalData: `@import "@/scss/main.scss";`
       }
     }
-  },
-  config: {
-    npm: {
-      ignoreDeprecations: ["apollo-server-errors"]
-    }
   }
 }
