@@ -15,4 +15,9 @@ module.exports = {
       }
     }
   },
+  config: {
+    npm: {
+      ignoreDeprecations: ["apollo-server-errors"]
+    }
+  }
 }
